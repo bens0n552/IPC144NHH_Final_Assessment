@@ -40,20 +40,6 @@ int main(void)
 	//    the reporting options
 	//
 	// 3) Generate the user-selected report
-
-    const char filename[] = "data.txt";
-    struct RiderInfo info[SIZE] = { 0 };
-    int result = 0;
-    int i;
-
-    FILE* data = fopen(filename, "r");
-
-    for (i = 0; i < 2; i++)
-    {
-        result = readFileRecord(data, &info[i]);
-    }
-
-    printf("Name: %s", info[1].name);
 			
 	return 0;
 }
