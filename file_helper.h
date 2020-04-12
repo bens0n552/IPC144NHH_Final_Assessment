@@ -38,11 +38,11 @@ struct RiderInfo
     int age;
     char raceLength;
 
-    float startTime;
-    float mountainTime;
-    float finishTime;
+    double startTime;
+    double mountainTime;
+    double finishTime;
 
-    char withdrawn;
+    int withdrawn;
 };
 //Le Minh Nhat Dang - 15:30 10/04/2020
 
