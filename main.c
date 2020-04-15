@@ -23,7 +23,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "file_helper.h"
-#define SIZE 20
 
 int main(void)
 {
@@ -40,6 +39,9 @@ int main(void)
 	//    the reporting options
 	//
 	// 3) Generate the user-selected report
-			
+	
+	printf("******************** Seneca Cycling Race Results ********************\n");
+    	managerSystem();
+	
 	return 0;
 }
