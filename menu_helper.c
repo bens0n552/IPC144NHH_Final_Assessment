@@ -77,6 +77,76 @@ int menu(void)
 
 void managerSystem(void)
 {
-    
-  return;
+	const char filename[] = "data.txt";
+	struct RiderInfo info[SIZE] = { 0 };
+	int result = 0;
+	int i = 0;
+	int stop = 0;
+	int realSize = 0;
+
+	int selection = 1;
+	int flag = 1;
+
+	/*---------------Load File data.txt---------------*/
+	FILE* data = fopen(filename, "r");
+
+	if (data == NULL)
+	{
+		printf("\nERROR: Unable to open the file for reading.\n");
+		flag = 0;
+	}
+	else
+	{
+		for (i = 0; i < SIZE && stop == 0; i++)
+		{
+			result = readFileRecord(data, &info[i]);
+			if (result == 1)
+			{
+				stop = 1;
+				realSize = i;
+			}
+		}
+		if (realSize == 1 && strlen(info[0].name) == 0)
+		{
+			printf("\nThe file data.txt is empty! Exiting the program...\n");
+			flag = 0;
+		}
+	}
+
+	/*---------------Display Menu And Call The Functions---------------*/
+	while (flag != 0)
+	{
+		selection = menu();
+
+		if (selection == 1)
+		{
+			printf("\nNot available\n");
+			//findBestThreeRiders(info, realSize);
+		}
+
+		if (selection == 2)
+		{
+			printf("\nNot available\n");
+			//displayAllRiders(info, realSize);
+		}
+
+		if (selection == 3)
+		{
+			printf("\nNot available\n");
+			//findWorstThreeRiders(info, realSize);
+		}
+
+		if (selection == 4)
+		{
+			printf("\nNot available\n");
+			//displayWinners(info, realSize);
+		}
+
+		if (selection == 0)
+		{
+			printf("\nKeep on Riding!\n");
+			flag = 0;
+		}
+	}
+	return;
 }
